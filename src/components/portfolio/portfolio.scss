@@ -1,0 +1,164 @@
+@import '../../global.scss';
+
+.portfolio {
+	background-color: #fecd45;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	@include mobile {
+		border-top: 0.3rem solid #e1fcfd;
+		box-sizing: border-box;
+	}
+
+	.arrow {
+		position: absolute;
+		text-decoration: none;
+		color: #9cf6fb;
+
+		@include mobile {
+			top: 2%;
+		}
+
+		&.left-arr {
+			left: 5%;
+		}
+
+		&.right-arr {
+			right: 5%;
+		}
+
+		.arr-icon {
+			font-size: 5rem;
+			padding: 0.5rem;
+			@include mobile {
+				font-size: 4rem;
+			}
+		}
+
+		&:focus {
+			color: #e1fcfd;
+		}
+	}
+
+	.container {
+		width: 70%;
+		height: 75%;
+		border-radius: 2rem;
+		display: flex;
+		scroll-snap-type: x mandatory;
+
+		overflow: auto;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none; //firefox
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		@include mid {
+			height: 85%;
+		}
+
+		@include mobile {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
+
+		.item {
+			flex-shrink: 0;
+			scroll-snap-align: start;
+			width: 100%;
+			height: 100%;
+
+			.link {
+				text-decoration: none;
+
+				.item-wrapper {
+					display: flex;
+					width: 100%;
+					height: 100%;
+					color: #9cf6fb;
+					@include mobile {
+						flex-direction: column;
+					}
+
+					.left {
+						flex: 4;
+						background: linear-gradient(#4a5fc1, $mainColor);
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						box-sizing: border-box;
+						padding: 3% 2%;
+						@include mobile {
+							flex: 6;
+							align-items: center;
+							justify-content: space-around;
+						}
+
+						.icon-wrapper {
+							background-color: #fecd45;
+							height: 3rem;
+							width: 3rem;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							border-radius: 2rem;
+							border-style: dotted;
+							border-color: $mainColor;
+
+							.icon {
+								font-size: 2rem;
+								color: $mainColor;
+							}
+						}
+
+						h1 {
+							font-size: 2.6rem;
+							@include mid {
+								font-size: 2rem;
+							}
+							@include mobile {
+								font-size: 8vw;
+								text-align: center;
+							}
+						}
+						p {
+							font-size: 1rem;
+						}
+					}
+
+					.right {
+						flex: 7;
+						overflow: hidden;
+						position: relative;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: fill;
+							z-index: 2;
+							position: relative;
+						}
+
+						.keywords {
+							position: absolute;
+							font-size: 2rem;
+							margin: 2rem;
+						}
+
+						&:hover {
+							background-color: #4a5fc1;
+							img {
+								opacity: 0.2;
+								z-index: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

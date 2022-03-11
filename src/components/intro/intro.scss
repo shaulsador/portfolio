@@ -1,0 +1,132 @@
+@import '../../global.scss';
+
+.intro {
+	background-color: white;
+	display: flex;
+	color: $mainColor;
+	@include mobile {
+		position: relative;
+	}
+
+	.left {
+		flex: 1;
+		position: relative;
+		z-index: 1;
+
+		.wrapper {
+			width: 100%;
+			height: 100%;
+			padding-left: 20%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			@include mid {
+				padding-left: 10%;
+			}
+			@include mobile {
+				padding: 0 5%;
+			}
+
+			h1 {
+				font-size: 4rem;
+				margin: 1rem 0;
+			}
+			h2 {
+				font-size: 3rem;
+			}
+			h3 {
+				font-size: 2rem;
+				@include mobile {
+					height: 6rem;
+				}
+
+				span {
+					font-size: inherit;
+				}
+				.ityped-cursor {
+					// font-size: 2.2rem;
+					// opacity: 1;
+					-webkit-animation: blink 0.5s infinite;
+					-moz-animation: blink 0.5s infinite;
+					animation: blink 0.5s infinite;
+					animation-direction: alternate;
+				}
+
+				@keyframes blink {
+					100% {
+						opacity: 0;
+					}
+				}
+
+				@-webkit-keyframes blink {
+					100% {
+						opacity: 0;
+					}
+				}
+
+				@-moz-keyframes blink {
+					100% {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		a {
+			position: absolute;
+			bottom: 2rem;
+			// display: block;
+			// text-align: center;
+			left: 40%;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.arrow {
+				color: $mainColor;
+				font-size: 4rem;
+				animation: arrowBlink 2s alternate infinite;
+			}
+			@keyframes arrowBlink {
+				to {
+					font-size: 3rem;
+					opacity: 40%;
+				}
+			}
+		}
+	}
+
+	.right {
+		flex: 1;
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+		@include mobile {
+			position: absolute;
+		}
+
+		.background {
+			display: flex;
+			flex-direction: column;
+			height: 50rem;
+			width: 50rem;
+			justify-content: center;
+			align-items: flex-start;
+			background-color: #9cf6fb;
+			border-radius: 100rem;
+			color: #e1fcfd;
+			@include mobile {
+				justify-content: start;
+				align-items: center;
+			}
+		}
+		img {
+			position: absolute;
+			bottom: 0;
+			@include mobile {
+				left: 0;
+			}
+		}
+	}
+}

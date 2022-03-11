@@ -1,0 +1,112 @@
+@import '../../global.scss';
+
+.navbar {
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(45deg, $mainColor, #4a5fc1);
+	color: #9cf6fb;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	transition: all 1s ease;
+
+	.wrapper {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 3rem;
+		@include mobile {
+			padding: 0 1rem;
+		}
+
+		.left {
+			display: flex;
+			align-items: center;
+
+			.logo {
+				text-decoration: none;
+				font-size: 3rem;
+				font-weight: 700;
+				color: #9cf6fb;
+				margin-right: 3rem;
+				transition: all 1s ease;
+			}
+
+			.container {
+				display: flex;
+				align-items: center;
+				margin-right: 2.5rem;
+				@include mid {
+					margin-right: 1rem;
+				}
+
+				@include mobile {
+					display: none;
+				}
+
+				.icons {
+					font-size: 2rem;
+					margin-right: 10px;
+				}
+
+				span {
+					font-size: 1.4rem;
+					font-weight: 500;
+					@include mid {
+						font-size: 1rem;
+						font-weight: 100;
+					}
+				}
+			}
+		}
+
+		.right {
+			.hamberger {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 2.5rem;
+				height: 2rem;
+				cursor: pointer;
+
+				span {
+					background-color: #9cf6fb;
+					width: 100%;
+					height: 3px;
+					transform-origin: left;
+					transition: all 2s ease;
+				}
+			}
+		}
+	}
+
+	&.open {
+		background: linear-gradient(45deg, #9cf6fb, #e1fcfd);
+		color: $mainColor;
+
+		.left {
+			.logo {
+				color: $mainColor;
+			}
+		}
+
+		.hamberger {
+			span {
+				&:first-child {
+					background-color: $mainColor;
+					transform: rotate(45deg);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:last-child {
+					background-color: $mainColor;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+}
