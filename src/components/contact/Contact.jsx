@@ -49,7 +49,7 @@ function Contact() {
 					Contact.
 					<span>
 						<a
-							href='https://www.linkedin.com/in/xiaotian-he-10182919a/'
+							href='https://www.linkedin.com/in/xiaotian-he/'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
